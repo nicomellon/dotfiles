@@ -1,9 +1,7 @@
--- [[ Configure Treesitter ]]
--- See `:help nvim-treesitter`
-require('nvim-treesitter.configs').setup {
-  -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'typescript', 'help' },
+local protected_setup = require('nm.helpers').protected_setup
 
+local opts = {
+  ensure_installed = { 'go', 'lua', 'python', 'typescript', 'help' },
   highlight = { enable = true },
   indent = { enable = true, disable = { 'python' } },
   incremental_selection = {
@@ -60,10 +58,4 @@ require('nvim-treesitter.configs').setup {
     },
   },
 }
-
--- Diagnostic keymaps
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
-
+protected_setup('nvim-treesitter.configs', opts)

@@ -9,8 +9,15 @@ vim.o.incsearch = true
 vim.o.nu = true
 vim.o.relativenumber = true
 
--- Enable mouse mode
-vim.o.mouse = 'a'
+-- Enable cursorline highlight
+vim.o.cursorline = true
+
+-- Folds
+vim.o.foldmethod = "syntax"
+vim.o.foldlevelstart = 99
+
+-- Disable wrapping
+vim.o.wrap = false
 
 -- Enable break indent
 vim.o.breakindent = true
