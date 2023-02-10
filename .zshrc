@@ -110,3 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+export PATH="/Library/Frameworks/Python.framework/Versions/3.11/bin:$PATH"
+
+source "$HOME/.cargo/env"

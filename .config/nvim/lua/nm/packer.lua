@@ -72,13 +72,19 @@ require('packer').startup(function(use)
     }
   }
 
+  use { -- Themes
+    { "catppuccin/nvim", as = "catppuccin" },
+    { 'navarasu/onedark.nvim' },
+    { 'folke/tokyonight.nvim' },
+  }
+
   use 'nvim-lualine/lualine.nvim' -- Status line
   use 'nvim-tree/nvim-web-devicons' -- Icons used by other plugins
   use 'nvim-lua/plenary.nvim' -- Functions used by other plugins
   use 'lukas-reineke/indent-blankline.nvim' -- Add indentation guides even on blank lines
   use 'numToStr/Comment.nvim' -- "gc" to comment visual regions/lines
   use 'tpope/vim-sleuth' -- Detect tabstop and shiftwidth automatically
-  use 'navarasu/onedark.nvim' -- Theme inspired by Atom
+  use 'sainnhe/edge' -- Theme inspired by Atom One and Material
 
   -- Add custom plugins to packer from ~/.config/nvim/lua/custom/plugins.lua
   local has_plugins, plugins = pcall(require, 'custom.plugins')

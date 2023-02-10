@@ -33,6 +33,7 @@ nnoremap('<leader>/', function()
     previewer = false,
   })
 end, '[/] Fuzzily search in current buffer]')
+nnoremap('<leader>sc', builtin.colorscheme, '[S]earch [C]olorscheme')
 
 nnoremap('<leader>sf', builtin.find_files, '[S]earch [F]iles')
 nnoremap('<leader>sh', builtin.help_tags, '[S]earch [H]elp')

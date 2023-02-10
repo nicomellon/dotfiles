@@ -11,6 +11,7 @@ vim.o.relativenumber = true
 
 -- Enable cursorline highlight
 vim.o.cursorline = true
+vim.o.cursorcolumn = true
 
 -- Folds
 vim.o.foldmethod = "syntax"
