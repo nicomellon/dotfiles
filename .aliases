@@ -1,0 +1,23 @@
+alias cfg='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+
+# prompt for confirmation before overwriting files
+alias cp='cp -i'
+alias rm='rm -i'
+alias mv='mv -i'
+
+# show all open ports and the processes using them
+alias ports='netstat -a | grep -i "listen"'
+
+alias weather='function _weather() { curl wttr.in/$1; }; _weather'
+
+# git aliases
+alias gst='git status'
+alias gd='git diff --name-status'
+alias gdiff='git diff'
+alias gc='git commit -v'
+alias gb='git branch'
+alias gco='git checkout'
+alias ga='git add'
+alias gpush='git push origin $(git rev-parse --abbrev-ref HEAD)'
+alias gpull='git pull origin $(git rev-parse --abbrev-ref HEAD)'
+alias gitlog='git log --graph --oneline --decorate --all'
