@@ -1,7 +1,7 @@
 ## Installation
 1. Clone your dotfiles into a bare repository in a "dot" folder of your $HOME:
 ```
-git clone --bare <git-repo-url> $HOME/.cfg
+git clone --bare https://github.com/nicomellon/dotfiles.git $HOME/.cfg
 ```
 2. Define the alias in the current shell scope:
 ```
