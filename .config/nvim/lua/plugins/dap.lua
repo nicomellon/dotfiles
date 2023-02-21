@@ -1,3 +1,13 @@
+return {
+  "mfussenegger/nvim-dap",
+  dependencies = {
+    "mfussenegger/nvim-dap-python",
+    "rcarriga/nvim-dap-ui",
+    "theHamsta/nvim-dap-virtual-text",
+  }
+}
+
+--[[
 local nnoremap = require('nm.helpers').nnoremap
 local protected_setup = require('nm.helpers').protected_setup
 
@@ -71,3 +81,4 @@ vim.keymap.set({ 'n', 'v' }, '<Leader>dh', widgets.hover, { desc = '[DAP] Widget
 vim.keymap.set({ 'n', 'v' }, '<Leader>dp', widgets.preview, { desc = '[DAP] Widgets: [P]review' })
 nnoremap('<Leader>df', function() widgets.centered_float(widgets.frames) end, '[DAP] Widgets: [F]rames')
 nnoremap('<Leader>ds', function() widgets.centered_float(widgets.scopes) end, '[DAP] Widgets: [S]copes')
+]]
