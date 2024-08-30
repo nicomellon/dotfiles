@@ -1,0 +1,16 @@
+-- local client = vim.lsp.start_client({
+-- 	name = "lspy",
+-- 	cmd = { "/Users/nm/code/lspy/venv/bin/python", "/Users/nm/code/lspy/src/lspy" },
+-- })
+--
+-- if not client then
+-- 	vim.notify("hey no client")
+-- 	return
+-- end
+--
+-- vim.api.nvim_create_autocmd("FileType", {
+-- 	pattern = "markdown",
+-- 	callback = function()
+-- 		vim.lsp.buf_attach_client(0, client)
+-- 	end,
+-- })
