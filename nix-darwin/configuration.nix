@@ -2,7 +2,9 @@
 
   environment.systemPackages = [
     pkgs.direnv
+    pkgs.go
     pkgs.neovim
+    pkgs.nodejs_22
     pkgs.skhd
     pkgs.tmux
   ];
@@ -14,8 +16,10 @@
   # Enable nix-darwin to manage installing/updating/upgrading Homebrew taps, formulae, and casks.
   # NOTE: enabling this option does not install Homebrew, see the Homebrew website for installation instructions.
   homebrew.enable = true;
+  homebrew.brews = [ ];
   homebrew.casks = [
     "google-chrome"
+    "karabiner-elements"
     "wezterm"
   ];
 
