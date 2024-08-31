@@ -1,1 +1,1 @@
-cmd + shift + ctrl + alt - t : open -a /Applications/WezTerm.app
+hyper - t : open -a /Applications/WezTerm.app
