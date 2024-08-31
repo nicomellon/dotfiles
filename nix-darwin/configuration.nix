@@ -6,6 +6,7 @@
     pkgs.neovim
     pkgs.nodejs_22
     pkgs.pass
+    pkgs.skhd
     pkgs.tmux
   ];
 
@@ -33,6 +34,7 @@
   security.pam.enableSudoTouchIdAuth = true;
 
   services.nix-daemon.enable = true;
+  services.skhd.enable = true;
 
   system = {
     defaults = {
