@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
-  # home.username = "nm";
-  # home.homeDirectory = "/Users/nm";
+  home.username = "nm";
+  home.homeDirectory = "/Users/nm";
 
   # This value determines the Home Manager release that your
   # configuration is compatible with. This helps avoid breakage
@@ -17,15 +17,18 @@
   home.stateVersion = "24.05";
 
   home.file = {
-    ".zshrc".source = ./dotfiles/.zshrc;
-    ".tmux.conf".source = ./dotfiles/.tmux.conf;
-    ".config/wezterm".source = ./dotfiles/wezterm;
-    ".config/skhd".source = ./dotfiles/skhd;
-    ".config/nvim".source = ./dotfiles/nvim;
-    ".config/karabiner".source = ./dotfiles/karabiner;
+    # ".tmux.conf".source = ../.tmux.conf;
+    # ".config/wezterm".source = ../wezterm;
+    # ".config/skhd".source = ../skhd;
+    ".config/nvim".source = ../nvim;
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs.password-store.enable = true;
+  programs.password-store.settings = {
+    PASSWORD_STORE_DIR = "../password-store";
+  };
+  programs.starship.enable = true;
   programs.zsh.enable = true;
 }
