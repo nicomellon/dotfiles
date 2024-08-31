@@ -5,12 +5,14 @@
     pkgs.go
     pkgs.neovim
     pkgs.nodejs_22
+    pkgs.pass
     pkgs.skhd
     pkgs.tmux
   ];
 
   environment.variables = {
     EDITOR = "nvim";
+    PASSWORD_STORE_DIR = "$HOME/.password-store";
   };
 
   # Enable nix-darwin to manage installing/updating/upgrading Homebrew taps, formulae, and casks.
@@ -18,6 +20,7 @@
   homebrew.enable = true;
   homebrew.brews = [ ];
   homebrew.casks = [
+    "alfred"
     "google-chrome"
     "karabiner-elements"
     "wezterm"

@@ -36,8 +36,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.password-store.enable = true;
-
   programs.starship.enable = true;
 
   programs.zsh.enable = true;
