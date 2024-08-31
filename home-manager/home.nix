@@ -20,9 +20,10 @@
     # ".tmux.conf".source = ../.tmux.conf;
     ".config/karabiner".source = ../karabiner;
     ".config/nvim".source = ../nvim;
-    ".password-store".source = ../password-store;
+    ".config/tmux".source = ../tmux;
     ".config/skhd".source = ../skhd;
     ".config/wezterm".source = ../wezterm;
+    ".password-store".source = ../password-store;
   };
 
   programs.gpg.enable = true;
