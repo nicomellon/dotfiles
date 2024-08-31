@@ -21,7 +21,6 @@
     ".config/karabiner".source = ../karabiner;
     ".config/nvim".source = ../nvim;
     ".config/tmux".source = ../tmux;
-    ".config/skhd".source = ../skhd;
     ".config/wezterm".source = ../wezterm;
     ".password-store".source = ../password-store;
   };
