@@ -21,14 +21,12 @@
     # ".config/wezterm".source = ../wezterm;
     # ".config/skhd".source = ../skhd;
     ".config/nvim".source = ../nvim;
+    ".password-store".source = ../password-store;
   };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
   programs.password-store.enable = true;
-  programs.password-store.settings = {
-    PASSWORD_STORE_DIR = "../password-store";
-  };
   programs.starship.enable = true;
   programs.zsh.enable = true;
 }
