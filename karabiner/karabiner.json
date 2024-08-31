@@ -38,13 +38,13 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "t",
+                                    "key_code": "w",
                                     "modifiers": {
                                         "mandatory": ["left_command", "left_control", "left_shift", "left_option"],
                                         "optional": ["caps_lock"]
                                     }
                                 },
-                                "to": [{ "shell_command": "open '/Applications/iTerm.app'" }],
+                                "to": [{ "shell_command": "open '/Applications/WezTerm.app'" }],
                                 "type": "basic"
                             }
                         ]
