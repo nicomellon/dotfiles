@@ -11,6 +11,13 @@
     EDITOR = "nvim";
   };
 
+  # Enable nix-darwin to manage installing/updating/upgrading Homebrew taps, formulae, and casks.
+  # NOTE: enabling this option does not install Homebrew, see the Homebrew website for installation instructions.
+  homebrew.enable = true;
+  homebrew.casks = [
+    "google-chrome"
+  ];
+
   programs.zsh.enable = true;
 
   # Enable sudo authentication with Touch ID.
