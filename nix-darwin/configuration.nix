@@ -21,6 +21,7 @@
   homebrew.brews = [ ];
   homebrew.casks = [
     "alfred"
+    "docker"
     "google-chrome"
     "karabiner-elements"
     "wezterm"
