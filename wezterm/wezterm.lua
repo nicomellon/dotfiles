@@ -15,7 +15,7 @@ config = {
 	background = {
 		{
 			source = {
-				File = "/Users/nm/Pictures/nico.jpg",
+				File = "/Users/nm/dotfiles/pictures/nico.jpg",
 			},
 			hsb = {
 				hue = 1.0,
