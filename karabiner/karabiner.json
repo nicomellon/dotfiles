@@ -34,22 +34,6 @@
                         ]
                     },
                     {
-                        "description": "Application openers",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": {
-                                        "mandatory": ["left_command", "left_control", "left_shift", "left_option"],
-                                        "optional": ["caps_lock"]
-                                    }
-                                },
-                                "to": [{ "shell_command": "open '/Applications/WezTerm.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Home row mods",
                         "manipulators": [
                             {
