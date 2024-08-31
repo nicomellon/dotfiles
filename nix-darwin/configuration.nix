@@ -16,6 +16,7 @@
   homebrew.enable = true;
   homebrew.casks = [
     "google-chrome"
+    "wezterm"
   ];
 
   programs.zsh.enable = true;
