@@ -18,8 +18,8 @@
 
   home.file = {
     # ".tmux.conf".source = ../.tmux.conf;
-    # ".config/wezterm".source = ../wezterm;
-    # ".config/skhd".source = ../skhd;
+    ".config/wezterm".source = ../wezterm;
+    ".config/skhd".source = ../skhd;
     ".config/nvim".source = ../nvim;
     ".password-store".source = ../password-store;
   };
