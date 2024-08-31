@@ -24,9 +24,19 @@
     ".password-store".source = ../password-store;
   };
 
-  # Let Home Manager install and manage itself.
+  programs.gpg.enable = true;
+  programs.gpg.publicKeys = [
+    {
+      source = ../keys/public.gpg;
+      trust = 5;
+    }
+  ];
+
   programs.home-manager.enable = true;
+
   programs.password-store.enable = true;
+
   programs.starship.enable = true;
+
   programs.zsh.enable = true;
 }
