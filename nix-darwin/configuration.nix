@@ -6,6 +6,7 @@
     pkgs.neovim
     pkgs.nodejs_22
     pkgs.pass
+    pkgs.python312
     pkgs.skhd
     pkgs.tmux
   ];
