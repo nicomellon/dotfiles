@@ -9,6 +9,7 @@
     pkgs.python312
     pkgs.skhd
     pkgs.tmux
+    pkgs.tree
   ];
 
   environment.variables = {
