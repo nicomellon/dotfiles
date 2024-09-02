@@ -25,8 +25,10 @@
     "nikitabobko/tap/aerospace"
     "alfred"
     "docker"
+    "gather"
     "google-chrome"
     "karabiner-elements"
+    "slack"
     "wezterm"
   ];
 
