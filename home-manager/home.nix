@@ -6,7 +6,7 @@
   home.stateVersion = "24.05";
 
   home.file = {
-    # ".tmux.conf".source = ../.tmux.conf;
+    ".config/aerospace".source = ../aerospace;
     ".config/karabiner".source = ../karabiner;
     ".config/nvim".source = ../nvim;
     ".config/tmux".source = ../tmux;

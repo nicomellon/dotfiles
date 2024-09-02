@@ -20,6 +20,7 @@
   homebrew.enable = true;
   homebrew.brews = [ ];
   homebrew.casks = [
+    "nikitabobko/tap/aerospace"
     "alfred"
     "docker"
     "google-chrome"
