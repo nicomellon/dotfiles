@@ -1,15 +1,18 @@
 { config, pkgs, inputs, ... }: {
 
   environment.systemPackages = [
-    pkgs.direnv
+    pkgs.cheat
     pkgs.go
     pkgs.neovim
     pkgs.nodejs_22
     pkgs.pass
+    pkgs.pre-commit
     pkgs.python312
+    pkgs.ripgrep
     pkgs.skhd
     pkgs.tmux
     pkgs.tree
+    pkgs.uv
   ];
 
   environment.variables = {

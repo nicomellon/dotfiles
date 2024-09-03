@@ -106,6 +106,7 @@ return {
 								-- ignore = { "*" },
 								typeCheckingMode = "strict",
 							},
+							pythonPath = ".venv/bin/python",
 						},
 					},
 				},
