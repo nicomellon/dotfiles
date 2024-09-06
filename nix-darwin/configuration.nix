@@ -5,7 +5,6 @@
     pkgs.go
     pkgs.neovim
     pkgs.nodejs_22
-    pkgs.obsidian
     pkgs.pass
     pkgs.pre-commit
     pkgs.python312
@@ -32,6 +31,7 @@
     "gather"
     "google-chrome"
     "karabiner-elements"
+    "obsidian"
     "slack"
     "wezterm"
   ];
