@@ -9,7 +9,6 @@
     pkgs.pre-commit
     pkgs.python312
     pkgs.ripgrep
-    pkgs.skhd
     pkgs.tmux
     pkgs.tree
     pkgs.uv
