@@ -3,6 +3,7 @@
   environment.systemPackages = [
     pkgs.cheat
     pkgs.go
+    pkgs.fzf
     pkgs.neovim
     pkgs.nodejs_22
     pkgs.pass
@@ -30,7 +31,6 @@
     "docker"
     "gather"
     "google-chrome"
-    "karabiner-elements"
     "obsidian"
     "slack"
     "wezterm"
@@ -55,6 +55,7 @@
       dock = {
         appswitcher-all-displays = true;
         autohide = true;
+        expose-group-by-app = true;
         mru-spaces = false;
         show-recents = false;
       };

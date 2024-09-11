@@ -8,7 +8,6 @@
   home.file = {
     ".config/aerospace".source = ../aerospace;
     ".config/cheat".source = ../cheat;
-    ".config/karabiner".source = ../karabiner;
     ".config/nvim".source = ../nvim;
     ".config/tmux".source = ../tmux;
     ".config/wezterm".source = ../wezterm;
