@@ -25,6 +25,7 @@
   # NOTE: enabling this option does not install Homebrew, see the Homebrew website for installation instructions.
   homebrew.enable = true;
   homebrew.onActivation.cleanup = "uninstall";
+  homebrew.onActivation.upgrade = true;
   homebrew.brews = [ ];
   homebrew.casks = [
     "nikitabobko/tap/aerospace"
