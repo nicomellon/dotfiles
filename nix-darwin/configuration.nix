@@ -46,7 +46,6 @@
   security.pam.enableSudoTouchIdAuth = true;
 
   services.nix-daemon.enable = true;
-  services.skhd.enable = true;
 
   system = {
     defaults = {
