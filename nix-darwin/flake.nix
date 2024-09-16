@@ -12,11 +12,17 @@
   outputs = inputs@{ self, nix-darwin, nixpkgs, home-manager }:
   let
     configuration = { pkgs, ... }: {
+      environment.darwinConfig = "$HOME/code/nicomellon/dotfiles/nix-darwin/flake.nix";
+
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [ pkgs.neovim pkgs.pass
         ];
+
+      environment.variables = {
+        EDITOR = "nvim";
+      };
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;

@@ -45,6 +45,7 @@
   programs.starship.enable = true;
 
   home.sessionVariables = {
+    EDITOR = "nvim";
   };
 
   home.sessionPath = [
