@@ -1,0 +1,7 @@
+[username]
+format = '\[$user@'
+show_always = true
+
+[hostname]
+format = '$ssh_symbol$hostname\] '
+ssh_only = false
