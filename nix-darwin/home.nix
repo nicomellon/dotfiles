@@ -8,7 +8,6 @@
   # Makes sense for user specific applications that shouldn't be available system-wide
   home.packages = [
     pkgs.tmux
-    pkgs.fzf
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -39,6 +38,9 @@
 
   programs.direnv.enable = true;
   programs.direnv.nix-direnv.enable = true;
+
+  programs.fd.enable = true;
+  programs.fzf.enable = true;
 
   programs.starship.enable = true;
 
