@@ -8,6 +8,7 @@
   # Makes sense for user specific applications that shouldn't be available system-wide
   home.packages = [
     pkgs.tmux
+    pkgs.nodejs_22
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
