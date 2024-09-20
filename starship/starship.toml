@@ -1,3 +1,11 @@
+format = """
+$username\
+$hostname\
+$directory\
+$git_state\
+$git_status\
+$nix_shell"""
+
 [username]
 format = '\[$user@'
 show_always = true
