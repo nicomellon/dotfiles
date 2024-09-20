@@ -13,3 +13,6 @@ show_always = true
 [hostname]
 format = '$ssh_symbol$hostname\] '
 ssh_only = false
+
+[nix_shell]
+format = '\($name\))]($style)'
