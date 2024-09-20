@@ -1,18 +1,21 @@
 format = """
-$username\
-$hostname\
-$directory\
+$git_branch\
 $git_state\
 $git_status\
-$nix_shell"""
+$character"""
 
-[username]
-format = '\[$user@'
-show_always = true
+right_format = """$nix_shell"""
+
+[git_branch]
+format = '[$symbol$branch(:$remote_branch)]($style) '
 
 [hostname]
 format = '$ssh_symbol$hostname\] '
 ssh_only = false
 
 [nix_shell]
-format = '\($name\))]($style)'
+format = 'via [$symbol$state( \($name\))]($style)'
+
+[username]
+format = '\[$user@'
+show_always = true
