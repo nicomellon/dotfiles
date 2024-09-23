@@ -161,10 +161,7 @@ return {
 			dapui.toggle()
 		end)
 
-		require("dap-python").setup(
-			"~/.virtualenvs/debugpy/bin/python",
-			{ include_configs = true, console = "externalTerminal" }
-		)
+		require("dap-python").setup(".venv/bin/python", { include_configs = true, console = "externalTerminal" })
 	end,
 }
 -- vim: ts=4 sts=4 sw=4 et
