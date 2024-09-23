@@ -17,7 +17,10 @@
       # List packages installed in system profile. To search by name, run:
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
-        [ pkgs.neovim pkgs.pass
+        [
+          pkgs.neovim
+          pkgs.pass
+          pkgs.tree
         ];
 
       environment.variables = {
