@@ -9,6 +9,7 @@
   home.packages = [
     pkgs.tmux
     pkgs.nodejs_22
+    pkgs.pre-commit
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
