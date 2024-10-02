@@ -10,6 +10,7 @@
     pkgs.tmux
     pkgs.nodejs_22
     pkgs.pre-commit
+    pkgs.ripgrep
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
