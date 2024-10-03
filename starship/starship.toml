@@ -1,11 +1,13 @@
 format = """
+$directory\
 $git_branch\
 $git_state\
 $git_status\
 $jobs\
 $character"""
 
-right_format = """$nix_shell"""
+[directory]
+truncate_to_repo = false
 
 [git_branch]
 format = '[$symbol$branch(:$remote_branch)]($style) '
