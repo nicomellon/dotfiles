@@ -2,7 +2,7 @@
 if [[ $# -eq 1 ]]; then
 selected=$1
 else
-selected=$(find ~/code/nestersoftware/backend ~/code/nicomellon -mindepth 1 -maxdepth 1 -type d | fzf)
+selected=$(find ~/code/nestersoftware/backend ~/code/nestersoftware/frontend ~/code/nestersoftware/Devops ~/code/nicomellon -mindepth 1 -maxdepth 1 -type d | fzf)
 fi
 
 if [[ -z $selected ]]; then

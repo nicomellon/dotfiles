@@ -18,6 +18,9 @@
       # $ nix-env -qaP | grep wget
       environment.systemPackages =
         [
+          pkgs.awscli2
+          pkgs.kubectl
+          pkgs.kubernetes-helm
           pkgs.neovim
           pkgs.pass
           pkgs.tree
@@ -26,6 +29,13 @@
       environment.variables = {
         EDITOR = "nvim";
       };
+
+      homebrew.enable = true;
+      homebrew.casks = [
+        "dbeaver-community"
+        "karabiner-elements"
+        "postman"
+      ];
 
       # Auto upgrade nix package and the daemon service.
       services.nix-daemon.enable = true;

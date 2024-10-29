@@ -24,9 +24,9 @@
     ".config/wezterm".source = ../wezterm;
   };
 
-  programs.git.enable = true;
-  programs.git.userEmail = "nmellon94@gmail.com";
-  programs.git.userName = "nicomellon";
+  # programs.git.enable = true;
+  # programs.git.userEmail = "nmellon94@gmail.com";
+  # programs.git.userName = "nicomellon";
   # programs.git.hooks = {
   #   pre-commit = ./pre-commit-script;
   # };
