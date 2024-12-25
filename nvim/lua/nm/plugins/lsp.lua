@@ -6,6 +6,7 @@ return {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
 			"WhoIsSethDaniel/mason-tool-installer.nvim",
+			"saghen/blink.cmp",
 
 			-- Useful status updates for LSP.
 			-- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
@@ -81,7 +82,7 @@ return {
 			--  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
 			--  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
 			local capabilities = vim.lsp.protocol.make_client_capabilities()
-			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+			capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
 
 			-- Enable the following language servers
 			--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
@@ -93,66 +94,25 @@ return {
 			--  - settings (table): Override the default settings passed when initializing the server.
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
-				-- clangd = {},
-				gopls = {},
 				pyright = { -- https://github.com/microsoft/pyright/blob/main/docs/settings.md
 					settings = {
 						pyright = {
-							-- Using Ruff's import organizer
 							disableOrganizeImports = true,
 						},
-						python = {
-							analysis = {
-								-- ignore = { "*" },
-								typeCheckingMode = "strict",
-							},
-							pythonPath = ".venv/bin/python",
-						},
 					},
 				},
-				ruff_lsp = {
-					init_options = {
-						settings = {
-							-- Any extra CLI arguments for `ruff` go here.
-							args = {},
-						},
-					},
-				},
-				-- rust_analyzer = {},
-				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-				--
-				-- Some languages (like typescript) have entire language plugins that can be useful:
-				--    https://github.com/pmizio/typescript-tools.nvim
-				--
-				-- But for many setups, the LSP (`tsserver`) will work just fine
-				tsserver = {},
-				--
-
-				phpactor = {},
-
+				-- tsserver = {},
 				lua_ls = {
 					-- cmd = {...},
 					-- filetypes { ...},
 					-- capabilities = {},
 					settings = {
 						Lua = {
-							runtime = { version = "LuaJIT" },
-							workspace = {
-								checkThirdParty = false,
-								-- Tells lua_ls where to find all the Lua files that you have loaded
-								-- for your neovim configuration.
-								library = {
-									"${3rd}/luv/library",
-									unpack(vim.api.nvim_get_runtime_file("", true)),
-								},
-								-- If lua_ls is really slow on your computer, you can try this instead:
-								-- library = { vim.env.VIMRUNTIME },
-							},
 							completion = {
 								callSnippet = "Replace",
 							},
 							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-							-- diagnostics = { disable = { 'missing-fields' } },
+							diagnostics = { disable = { "missing-fields" } },
 						},
 					},
 				},
@@ -170,12 +130,8 @@ return {
 			-- for you, so that they are available from within Neovim.
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
-				"stylua", -- Used to format lua code
-				"debugpy", -- Python debugger
-				"gopls", -- Go LSP
+				"stylua", -- Lua formatter
 				"pyright", -- Python LSP
-				"ruff", -- Python linter and code formatter
-				"ruff-lsp", -- LSP for Ruff diagnostics and Code Actions
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
