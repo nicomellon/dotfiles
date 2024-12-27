@@ -27,23 +27,6 @@ require("lazy").setup({
 	-- "gc" to comment visual regions/lines
 	{ "numToStr/Comment.nvim", opts = {} },
 
-	{
-		"alexghergh/nvim-tmux-navigation",
-		config = function()
-			require("nvim-tmux-navigation").setup({
-				disable_when_zoomed = true, -- defaults to false
-				keybindings = {
-					left = "<C-h>",
-					down = "<C-j>",
-					up = "<C-k>",
-					right = "<C-l>",
-					-- last_active = "<C-\\>",
-					-- next = "<C-Space>",
-				},
-			})
-		end,
-	},
-
 	require("nm/plugins/gitsigns"),
 
 	require("nm/plugins/neogit"),
@@ -63,10 +46,6 @@ require("lazy").setup({
 	require("nm/plugins/colorschemes"),
 
 	require("nm/plugins/treesitter"),
-
-	require("nm/plugins/neotest"),
-
-	require("nm/plugins/markdown"),
 
 	--  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
 	--    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
