@@ -6,7 +6,18 @@ return {
 	dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
 	build = ":TSUpdate",
 	opts = {
-		ensure_installed = { "bash", "dockerfile", "gitcommit", "lua", "python", "sql", "yaml", "c", "markdown" },
+		ensure_installed = {
+			"bash",
+			"dockerfile",
+			"gitcommit",
+			"lua",
+			"python",
+			"sql",
+			"yaml",
+			"c",
+			"markdown",
+			"scheme",
+		},
 		highlight = { enable = true },
 		indent = { enable = true },
 		textobjects = {
