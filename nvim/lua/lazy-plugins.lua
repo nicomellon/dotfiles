@@ -37,8 +37,6 @@ require("lazy").setup({
 
 	require("nm/plugins/dap"),
 
-	require("nm/plugins/dbee"),
-
 	require("nm/plugins/conform"),
 
 	require("nm/plugins/cmp"),
