@@ -1,1 +1,4 @@
+font-family = JetBrainsMono Nerd Font Mono
 font-size = 16
+theme = TokyoNight
+bell-features = system,attention,title
