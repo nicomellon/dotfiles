@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+# Tracks Claude Code agent state per tmux window and notifies when one needs you.
+#
+# Called from Claude Code hooks (hook JSON on stdin):
+#   claude-notify working   UserPromptSubmit / PostToolUse
+#   claude-notify done      Stop
+#   claude-notify waiting   Notification (permission prompt)
+#   claude-notify clear     SessionEnd
+# Called from tmux:
+#   claude-notify jump <client>   switch <client> to the next agent needing attention
+
+state=$1
+
+if [[ $state == jump ]]; then
+	client=$2
+	target=$(tmux list-windows -a -F '#{@claude} #{session_id}:#{window_index}' |
+		awk '$1=="waiting"{print $2; w=1; exit} $1=="done" && !d{d=$2} END{if(!w && d) print d}')
+	if [[ -n $target ]]; then
+		tmux switch-client -c "$client" -t "$target"
+	else
+		tmux display-message -c "$client" 'No Claude agent needs attention'
+	fi
+	exit 0
+fi
+
+input=$(cat)
+[[ -z $TMUX_PANE ]] && exit 0
+
+win=$(tmux display -p -t "$TMUX_PANE" '#{window_id}') || exit 0
+
+case $state in
+working)
+	[[ $(tmux show -wv -t "$win" @claude 2>/dev/null) == working ]] ||
+		tmux set -w -t "$win" @claude working
+	exit 0
+	;;
+clear)
+	tmux set -wu -t "$win" @claude
+	exit 0
+	;;
+esac
+
+# Is someone already looking at this window in a focused terminal?
+seen=0
+any_focused=0
+while read -r cwin flags; do
+	[[ $flags == *focused* ]] || continue
+	any_focused=1
+	[[ $cwin == "$win" ]] && seen=1
+done < <(tmux list-clients -F '#{window_id} #{client_flags}')
+
+if [[ $seen == 1 && $state == done ]]; then
+	tmux set -wu -t "$win" @claude
+	exit 0
+fi
+
+tmux set -w -t "$win" @claude "$state"
+[[ $seen == 1 ]] && exit 0
+
+where=$(tmux display -p -t "$TMUX_PANE" '#{session_name}:#{window_index} (#{window_name})')
+if [[ $state == waiting ]]; then
+	detail=$(jq -r '.message // empty' <<<"$input" 2>/dev/null)
+	msg="Claude needs you in $where${detail:+ — $detail}"
+else
+	msg="Claude finished in $where"
+fi
+
+# Toast on every attached tmux client (whatever session it's in)
+while read -r client; do
+	tmux display-message -c "$client" -d 5000 "#[fg=#1a1b26,bg=#bb9af7,bold]  Claude #[default] ${msg//#/##}   #[fg=#565f89](prefix a to jump)"
+done < <(tmux list-clients -F '#{client_name}')
+
+# Terminal isn't focused (you're in another app): macOS notification too
+if [[ $any_focused == 0 ]]; then
+	osascript -e 'on run argv' -e 'display notification (item 1 of argv) with title "Claude Code" sound name "Glass"' -e 'end run' "$msg" >/dev/null 2>&1 &
+else
+	# terminal is focused but on another window: the toast alone is silent
+	afplay /System/Library/Sounds/Glass.aiff >/dev/null 2>&1 &
+fi
+exit 0
