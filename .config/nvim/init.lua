@@ -871,6 +871,20 @@ do
 end
 
 -- ============================================================
+-- SECTION 9b: MARKDOWN
+-- Inline rendering of headings, code blocks, tables, checkboxes
+-- ============================================================
+do
+  -- Renders markdown in the buffer itself. Relies on the `markdown` and
+  -- `markdown_inline` treesitter parsers (installed above) and mini.icons.
+  vim.pack.add { gh 'MeanderingProgrammer/render-markdown.nvim' }
+  require('render-markdown').setup {}
+
+  -- Toggle rendering on and off, e.g. to edit a table or see the raw source
+  vim.keymap.set('n', '<leader>tm', '<cmd>RenderMarkdown buf_toggle<CR>', { desc = '[T]oggle [M]arkdown rendering' })
+end
+
+-- ============================================================
 -- SECTION 10: OPTIONAL EXAMPLES / NEXT STEPS
 -- kickstart.plugins.* examples
 -- ============================================================
