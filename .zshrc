@@ -1,5 +1,11 @@
 [ -f "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
+# User-local binaries
+case ":$PATH:" in
+  *":$HOME/.local/bin:"*) ;;
+  *) export PATH="$HOME/.local/bin:$PATH" ;;
+esac
+
 alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
 eval "$(starship init zsh)"
@@ -23,3 +29,6 @@ setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS
 source <(fzf --zsh)
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# opencode
+export PATH=/Users/nico.mellon/.opencode/bin:$PATH
