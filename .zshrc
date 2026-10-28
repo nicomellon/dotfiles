@@ -8,6 +8,7 @@ esac
 
 alias dot='git --git-dir=$HOME/.dotfiles --work-tree=$HOME'
 
+export STARSHIP_CONFIG="$HOME/.config/starship/multiverse.toml"
 eval "$(starship init zsh)"
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/nico.mellon/.docker/completions $fpath)

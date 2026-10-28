@@ -1,0 +1,122 @@
+# Multiverse Computing starship theme
+# Palette taken from ~/.config/opencode/themes/multiverse.json
+# Keeps starship's default prompt layout and only changes colors.
+#
+# Use it:     export STARSHIP_CONFIG=~/.config/starship/multiverse.toml
+# Or install: ln -s ~/.config/starship/multiverse.toml ~/.config/starship.toml
+# Starship can't detect the terminal background, so for a light terminal
+# set palette = 'multiverse_light' below.
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+palette = 'multiverse'
+
+[palettes.multiverse]
+rose = '#F01438'
+rose_light = '#FF4D6A'
+blue = '#33BBFF'
+green = '#00CC66'
+yellow = '#FFC200'
+purple = '#A455FF'
+fg = '#F8FAFC'
+muted = '#9BA2AB'
+
+[palettes.multiverse_light]
+rose = '#C01030'
+rose_light = '#F01438'
+blue = '#318795'
+green = '#3D9A57'
+yellow = '#D68C27'
+purple = '#A455FF'
+fg = '#111417'
+muted = '#5E666E'
+
+[character]
+success_symbol = '[❯](bold green)'
+error_symbol = '[❯](bold rose_light)'
+vimcmd_symbol = '[❮](bold purple)'
+vimcmd_replace_symbol = '[❮](bold purple)'
+vimcmd_replace_one_symbol = '[❮](bold purple)'
+vimcmd_visual_symbol = '[❮](bold yellow)'
+
+[directory]
+style = 'bold rose'
+read_only_style = 'rose_light'
+truncation_symbol = '…/'
+
+[git_branch]
+style = 'bold purple'
+
+[git_commit]
+style = 'bold green'
+
+[git_state]
+style = 'bold yellow'
+
+[git_status]
+style = 'bold rose_light'
+
+[git_metrics]
+added_style = 'bold green'
+deleted_style = 'bold rose_light'
+
+[cmd_duration]
+style = 'bold yellow'
+
+[status]
+style = 'bold rose_light'
+
+[jobs]
+style = 'bold blue'
+
+[username]
+style_user = 'bold blue'
+style_root = 'bold rose'
+
+[hostname]
+style = 'bold blue'
+
+[time]
+style = 'muted'
+
+[package]
+style = 'bold muted'
+
+[docker_context]
+style = 'bold blue'
+
+[kubernetes]
+style = 'bold blue'
+
+[aws]
+style = 'bold yellow'
+
+[python]
+style = 'bold yellow'
+
+[nodejs]
+style = 'bold green'
+
+[rust]
+style = 'bold rose_light'
+
+[golang]
+style = 'bold blue'
+
+[lua]
+style = 'bold blue'
+
+[java]
+style = 'bold rose_light'
+
+[bun]
+style = 'bold muted'
+
+[deno]
+style = 'bold green'
+
+[terraform]
+style = 'bold purple'
+
+[nix_shell]
+style = 'bold blue'
