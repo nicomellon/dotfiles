@@ -1,0 +1,26 @@
+# Multiverse Computing (light)
+# Palette taken from ~/.config/opencode/themes/multiverse.json
+
+palette = 0=#21262B
+palette = 1=#C01030
+palette = 2=#3D9A57
+palette = 3=#D68C27
+palette = 4=#318795
+palette = 5=#A455FF
+palette = 6=#318795
+palette = 7=#D1D6DB
+palette = 8=#5E666E
+palette = 9=#F01438
+palette = 10=#1E725C
+palette = 11=#B0851F
+palette = 12=#318795
+palette = 13=#A455FF
+palette = 14=#318795
+palette = 15=#F8FAFC
+
+background = #F3F5F7
+foreground = #111417
+cursor-color = #F01438
+cursor-text = #FFFFFF
+selection-background = #D1D6DB
+selection-foreground = #111417
