@@ -40,12 +40,12 @@ vimcmd_replace_one_symbol = '[❮](bold purple)'
 vimcmd_visual_symbol = '[❮](bold yellow)'
 
 [directory]
-style = 'bold rose'
+style = 'bold purple'
 read_only_style = 'rose_light'
 truncation_symbol = '…/'
 
 [git_branch]
-style = 'bold purple'
+style = 'bold blue'
 
 [git_commit]
 style = 'bold green'
